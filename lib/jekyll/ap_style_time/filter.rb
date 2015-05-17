@@ -12,18 +12,7 @@ module Jekyll
       def ap_time(input)
         date = DateTime.parse(input)
         date_str = format_as_ap_date(date)
-
-        time = date.strftime('%l:%M').strip
-        meridian = date.strftime('%p').gsub('AM', 'a.m.').gsub('PM', 'p.m.')
-
-        if (date.hour == 0 && date.minute == 0)
-          time_str = 'midnight'
-        elsif (date.hour == 12 && date.minute == 0)
-          time_str = 'noon'
-        else
-          time_str = "#{time} #{meridian}"
-        end
-
+        time_str = format_as_ap_time(date)
         "#{time_str} #{date_str}"
       end
 
@@ -43,6 +32,19 @@ module Jekyll
         day = date.strftime('%e').strip
 
         "#{month} #{day}, #{year}"
+      end
+
+      def format_as_ap_time(date)
+        time = date.strftime('%l:%M').strip
+        meridian = date.strftime('%p').gsub('AM', 'a.m.').gsub('PM', 'p.m.')
+
+        if (date.hour == 0 && date.minute == 0)
+          'midnight'
+        elsif (date.hour == 12 && date.minute == 0)
+          'noon'
+        else
+          "#{time} #{meridian}"
+        end
       end
 
     end
