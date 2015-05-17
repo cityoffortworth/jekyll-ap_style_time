@@ -42,6 +42,8 @@ module Jekyll
           'midnight'
         elsif (date.hour == 12 && date.minute == 0)
           'noon'
+        elsif (date.minute == 0)
+          "#{date.strftime('%l').strip} #{meridian}"
         else
           "#{time} #{meridian}"
         end

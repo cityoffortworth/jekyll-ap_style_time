@@ -91,5 +91,10 @@ describe Jekyll::APStyleTime::Filter do
       assert_equal '2:23 p.m. Jan. 10, 2015', new_date
     end
 
+    it 'omits minutes if zero' do
+      new_date = filter.ap_time('2015-01-10 14:00:00 -600')
+      assert_equal '2 p.m. Jan. 10, 2015', new_date
+    end
+
   end
 end
