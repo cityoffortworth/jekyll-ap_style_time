@@ -34,7 +34,7 @@ module Jekyll
 
         month = "#{date.strftime('%b')}."
         case date.month
-        when 4, 5, 6, 7
+        when 3, 4, 5, 6, 7
           month = date.strftime('%B')
         when 9
           month = 'Sept.'
