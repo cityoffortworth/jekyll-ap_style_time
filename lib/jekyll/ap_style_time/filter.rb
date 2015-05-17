@@ -5,12 +5,12 @@ module Jekyll
     module Filter
 
       def ap_date(input)
-        date = DateTime.parse(input)
+        date = DateTime.parse(input.to_s)
         format_as_ap_date(date)
       end
 
       def ap_time(input)
-        date = DateTime.parse(input)
+        date = DateTime.parse(input.to_s)
         date_str = format_as_ap_date(date)
         time_str = format_as_ap_time(date)
         "#{time_str} #{date_str}"
