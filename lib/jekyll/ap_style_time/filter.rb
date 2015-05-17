@@ -2,7 +2,7 @@ require 'jekyll'
 
 module Jekyll
   module APStyleTime
-    module APTimeFilter
+    module Filter
 
       def ap_time(input)
         date = DateTime.parse(input)
@@ -37,4 +37,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_filter(Jekyll::APStyleTime::APTimeFilter)
+Liquid::Template.register_filter(Jekyll::APStyleTime::Filter)
