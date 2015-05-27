@@ -1,6 +1,6 @@
 # jekyll-ap_style_time
 
-Liquid filter for displaying AP style time and date values.
+Liquid filter for displaying Associated Press (AP) style time and date values.
 
 ## Usage
 
