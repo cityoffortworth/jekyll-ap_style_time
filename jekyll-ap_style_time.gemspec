@@ -1,7 +1,7 @@
 Gem::Specification.new do |spec|
 
   spec.name          = 'jekyll-ap_style_time'
-  spec.version       = '0.0.1'
+  spec.version       = '0.0.2'
   spec.authors       = ['Greg Scott']
   spec.email         = ['me@gregoryjscott.com']
   spec.summary       = %q{Liquid filter for displaying AP style time and date values.}
